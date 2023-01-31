@@ -2,7 +2,7 @@
 // This file is part of the 'vcxproj' project.
 // For conditions of distribution and use, see copyright notice in LICENSE.
 
-#include "project.h"
+#include "vcxproj/project.h"
 
 #include <tinyxml2.h>
 

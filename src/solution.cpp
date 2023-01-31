@@ -2,7 +2,7 @@
 // This file is part of the 'vcxproj' project.
 // For conditions of distribution and use, see copyright notice in LICENSE.
 
-#include "solution.h"
+#include "vcxproj/solution.h"
 
 #include <filesystem>
 #include <fstream>
@@ -13,7 +13,6 @@
 
 namespace
 {
-
 
 inline bool starts_with(const std::string& str, char c) noexcept
 {
