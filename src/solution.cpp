@@ -4,6 +4,8 @@
 
 #include "vcxproj/solution.h"
 
+#include "vcxproj/utils.h"
+
 #include <filesystem>
 #include <fstream>
 
@@ -115,33 +117,6 @@ inline bool contains(const std::string& text, const std::string& str)
   return text.find(str) != std::string::npos;
 }
 
-std::vector<std::string> split(const std::string& text, char sep)
-{
-  std::vector<std::string> result;
-
-  {
-    auto it = text.begin();
-    auto next = std::find(text.begin(), text.end(), sep);
-
-    while (next != text.end())
-    {
-      result.push_back(std::string(it, next));
-      it = next + 1;
-      next = std::find(it, text.end(), sep);
-    }
-
-    result.push_back(std::string(it, next));
-  }
-
-  auto it = std::remove_if(result.begin(), result.end(), [](const std::string& str) -> bool {
-    return str.empty();
-    });
-
-  result.erase(it, result.end());
-
-  return result;
-}
-
 std::string read_line(std::istream& stream)
 {
   std::string str;
@@ -202,7 +177,7 @@ public:
   {
     size_t index = line.find("=");
     line = simplified(line.substr(index + 1));
-    std::vector<std::string> items = split(line, ',');
+    std::vector<std::string> items = vcxproj::split(line, ',');
 
     vcxproj::Project project;
 
