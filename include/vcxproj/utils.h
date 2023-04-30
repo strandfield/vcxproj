@@ -5,6 +5,7 @@
 #ifndef VCXPROJ_UTILS_H
 #define VCXPROJ_UTILS_H
 
+#include <algorithm>
 #include <string>
 #include <vector>
 

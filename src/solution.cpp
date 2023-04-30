@@ -10,6 +10,7 @@
 #include <fstream>
 
 #include <cassert>
+#include <cstring>
 #include <stdexcept>
 #include <sstream>
 

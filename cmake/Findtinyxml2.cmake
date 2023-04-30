@@ -31,9 +31,9 @@ if (TINYXML2_FOUND AND NOT TARGET tinyxml2)
       IMPORTED_LOCATION "${TINYXML2_DIR}/bin/tinyxml2.dll"
       INTERFACE_INCLUDE_DIRECTORIES ${TINYXML2_INCLUDE})
   else()
-    message("tinyxml2 library: ${TINYXML2_DIR}/lib/tinyxml2.so")
+    message("tinyxml2 library: ${TINYXML2_DIR}/lib/libtinyxml2.so")
     set_target_properties(tinyxml2 PROPERTIES
-      IMPORTED_LOCATION "${TINYXML2_DIR}/lib/tinyxml2.so"
+      IMPORTED_LOCATION "${TINYXML2_DIR}/lib/libtinyxml2.so"
       INTERFACE_INCLUDE_DIRECTORIES ${TINYXML2_INCLUDE})
   endif()
 endif()
